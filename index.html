@@ -41,55 +41,17 @@
     </div>
   </section>
 
-<section class="u-clearfix u-section-2" id="anahart-radio">
-  <div class="u-clearfix u-sheet u-sheet-1" style="text-align: center;">
-    <h2 class="u-text">🎧 ANAHART SOUND PROJECT</h2>
-    <p class="u-text">Слушай случайные флюрные звуки из мастерской</p>
-
-    <!-- Название текущего трека -->
-    <h4 id="track-title" style="margin-top: 20px; font-weight: normal; font-style: italic;"></h4>
-
-    <!-- Плеер -->
-    <audio id="player" controls autoplay style="width: 90%; max-width: 600px;"></audio>
-
-    <!-- Кнопка -->
-    <br><br>
-    <button onclick="playRandom()" class="u-btn u-button-style">🔀 Следующий трек</button>
-  </div>
-</section>
-
-<script>
-  const tracks = [
-    {
-      file: "aifree/Summer Day in Bouznika 2025 June 24.m4a",
-      title: "Summer Day in Bouznika (24 June 2025)"
-    },
-    {
-      file: "aifree/Summer night in Bouznika 2025 23 June.m4a",
-      title: "Summer Night in Bouznika (23 June 2025)"
-    }
-  ];
-
-  let currentIndex = -1;
-
-  function playRandom() {
-    let newIndex;
-    do {
-      newIndex = Math.floor(Math.random() * tracks.length);
-    } while (newIndex === currentIndex && tracks.length > 1);
-    currentIndex = newIndex;
-
-    const audio = document.getElementById("player");
-    const title = document.getElementById("track-title");
-
-    audio.src = tracks[currentIndex].file;
-    title.textContent = tracks[currentIndex].title;
-    audio.play();
-  }
-
-  window.onload = playRandom;
-  document.getElementById("player").addEventListener("ended", playRandom);
-</script>
+  <section class="u-clearfix u-section-2" id="anahart-radio">
+    <div class="u-clearfix u-sheet u-sheet-1">
+      <h2 class="u-align-center u-text">🎧 ANAHART SOUND PROJECT</h2>
+      <p class="u-align-center u-text">Слушай случайные флюрные звуки из мастерской</p>
+      <div style="text-align:center;">
+        <audio id="player" controls autoplay style="width:90%; max-width: 600px;"></audio>
+        <br><br>
+        <button onclick="playRandom()" class="u-btn u-button-style">🔀 Следующий трек</button>
+      </div>
+    </div>
+  </section>
 
   <footer class="u-align-center u-grey-80 u-footer">
     <div class="u-clearfix u-sheet u-valign-middle u-sheet-1">
