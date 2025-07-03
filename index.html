@@ -45,15 +45,33 @@
   <div class="u-clearfix u-sheet u-sheet-1">
     <h2 class="u-align-center u-text">🎧 ANAHART SOUND PROJECT</h2>
     <p class="u-align-center u-text">Слушай случайные флюрные звуки из мастерской</p>
-    <div style="text-align:center;">
+<div style="text-align: center;">
 
-      <!-- ДОБАВЛЕНА СТРОКА НАЗВАНИЯ -->
-      <h4 id="track-title" style="font-weight: normal; font-style: italic; margin-bottom: 10px;"></h4>
+  <!-- Название трека -->
+  <h4 id="track-title" style="
+    font-weight: normal;
+    font-style: italic;
+    margin-bottom: 10px;
+    color: #ccff66;
+  "></h4>
 
-      <audio id="player" controls autoplay style="width:90%; max-width: 600px;"></audio>
-      <br><br>
-      <button onclick="playRandom()" class="u-btn u-button-style">🔀 Следующий трек</button>
-    </div>
+  <!-- Аудиоплеер -->
+  <audio id="player" controls autoplay style="width:90%; max-width: 600px;"></audio>
+
+  <!-- Кнопка NEXT -->
+  <div style="margin-top: 20px;">
+    <button onclick="playRandom()" style="
+      background-color: #222;
+      color: #ccff66;
+      padding: 10px 30px;
+      font-size: 16px;
+      border: none;
+      border-radius: 12px;
+      cursor: pointer;
+    ">NEXT</button>
+  </div>
+
+</div>
   </div>
 </section>
 
