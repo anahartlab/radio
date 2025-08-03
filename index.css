@@ -71,19 +71,34 @@
   50%  { background-position: 100% 50%; }
   100% { background-position: 0% 50%; }
 }
+
+@media (max-width: 575px) {
+  #pulse-fractal {
+    height: 80px;
+    margin: 30px auto;
+    border-radius: 16px;
+  }
+
+  .next-track-button {
+    font-size: 14px;
+    padding: 8px 20px;
+  }
+}
+
 #pulse-fractal {
-  width: 200px;
-  height: 200px;
-  margin: 30px auto;
-  border-radius: 50%;
-  background: repeating-radial-gradient(circle, 
+  width: 90%;
+  max-width: 400px;
+  height: 100px;
+  margin: 40px auto;
+  background: repeating-linear-gradient(135deg, 
     #00ffff, 
     #004444 20%, 
     #000000 40%);
-  background-size: 200% 200%;
+  background-size: 300% 300%;
   animation: fractalFlow 8s ease-in-out infinite;
   transition: transform 0.1s ease-out;
-  box-shadow: 0 0 40px #00ffff88;
+  box-shadow: 0 0 30px #00ffff88;
+  border-radius: 20px;
 }
 @keyframes fractalFlow {
   0% { background-position: 0% 50%; }
