@@ -1,6 +1,6 @@
 window.addEventListener("DOMContentLoaded", () => {
   const audio = document.getElementById("player");
-  const pulse = document.getElementById("pulse-circle");
+  const pulse = document.getElementById("pulse-fractal");
 
   if (!audio || !pulse) return;
 

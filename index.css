@@ -71,3 +71,13 @@
   50%  { background-position: 100% 50%; }
   100% { background-position: 0% 50%; }
 }
+#pulse-fractal {
+  width: 200px;
+  height: 200px;
+  margin: 30px auto;
+  background: radial-gradient(circle at center, #00ffff, #000);
+  filter: url(#fractalNoise);
+  border-radius: 50%;
+  transition: transform 0.1s ease-out;
+  box-shadow: 0 0 60px #00ffff44;
+}

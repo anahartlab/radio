@@ -120,7 +120,7 @@
   </section>
 
 <section class="u-clearfix u-section-2" id="anahart-radio">
-  <div id="pulse-circle"></div>
+  <div id="pulse-fractal"></div>
   <div class="u-clearfix u-sheet u-sheet-1">
     <h2 class="u-align-center u-text">ANAHART SOUND PROJECT</h2>
     <p class="u-align-center u-text">Сейчас играет:</p>
@@ -146,7 +146,12 @@
 </div>
   </div>
 </section>
-
+<svg width="0" height="0" style="position:absolute">
+  <filter id="fractalNoise">
+    <feTurbulence type="fractalNoise" baseFrequency="0.01" numOctaves="3" result="noise" />
+    <feDisplacementMap in="SourceGraphic" in2="noise" scale="40" />
+  </filter>
+</svg>
     <footer class="u-align-center u-clearfix u-container-align-center u-footer u-grey-80 u-footer" id="footer"><div class="u-clearfix u-sheet u-valign-middle-lg u-valign-middle-sm u-valign-middle-xs u-sheet-1">
         <p class="u-small-text u-text u-text-variant u-text-1">
           <a class="u-active-none u-border-none u-btn u-button-link u-button-style u-custom-font u-heading-font u-hover-none u-none u-text-palette-1-base u-btn-1" href="https://github.com/anahartlab" title="GirHub Profile Alex Anahart">This site created by Alex Anahart in 2025. </a>
