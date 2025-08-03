@@ -74,10 +74,9 @@
 
 @media (max-width: 575px) {
   #pulse-fractal {
-    height: 80px;
-    border-radius: 20px;
+    height: 28px;
+    border-radius: 14px;
   }
-
   .next-track-button {
     font-size: 14px;
     padding: 8px 20px;
@@ -86,10 +85,10 @@
 
 #pulse-fractal {
   width: 90%;
-  max-width: 1000px; /* в 3 раза шире обычного */
-  height: 100px;
+  max-width: 400px; /* или сколько было */
+  height: 33px;      /* в 3 раза меньше, было ~100px */
   margin: 40px auto;
-  border-radius: 40px;
+  border-radius: 20px;
   background: repeating-linear-gradient(135deg, 
     #00ffff,
     #004444 20%, 
@@ -98,9 +97,4 @@
   animation: fractalFlow 8s ease-in-out infinite;
   transition: transform 0.1s ease-out;
   box-shadow: 0 0 30px #00ffff88;
-}
-@keyframes fractalFlow {
-  0%   { background-position: 0% 50%; }
-  50%  { background-position: 100% 50%; }
-  100% { background-position: 0% 50%; }
 }
