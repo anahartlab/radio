@@ -130,7 +130,7 @@
   </div>
 
   <div style="margin-top: 10px;">
-    <button onclick="history.back()" style="
+    <button onclick="playPrev()" style="
       background-color: #444;
       color: #ffffff;
       padding: 8px 24px;
@@ -138,7 +138,7 @@
       border: none;
       border-radius: 8px;
       cursor: pointer;
-    ">НАЗАД</button>
+    ">PREV</button>
   </div>
 
 </div>
@@ -210,6 +210,17 @@ const tracks = [
     const audio = document.getElementById("player");
     const title = document.getElementById("track-title");
 
+    audio.src = tracks[currentIndex].file;
+    title.textContent = tracks[currentIndex].title;
+    audio.play();
+  }
+
+</script>
+  function playPrev() {
+    if (tracks.length === 0) return;
+    currentIndex = (currentIndex - 1 + tracks.length) % tracks.length;
+    const audio = document.getElementById("player");
+    const title = document.getElementById("track-title");
     audio.src = tracks[currentIndex].file;
     title.textContent = tracks[currentIndex].title;
     audio.play();
