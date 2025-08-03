@@ -55,11 +55,18 @@
   }
 }
 #pulse-circle {
-  width: 120px;
-  height: 120px;
-  margin: 30px auto 0;
+  width: 160px;
+  height: 160px;
+  margin: 30px auto;
   border-radius: 50%;
-  background: radial-gradient(circle at center, #ccff66, #111);
-  box-shadow: 0 0 20px #ccff66cc;
+  background: conic-gradient(from 0deg, red, orange, yellow, lime, cyan, blue, violet, red);
+  animation: spin 5s linear infinite;
+  box-shadow: 0 0 60px 20px rgba(255,255,255,0.1);
+  filter: blur(12px);
   transition: transform 0.1s ease-out;
+}
+
+@keyframes spin {
+  from { transform: rotate(0deg); }
+  to   { transform: rotate(360deg); }
 }
