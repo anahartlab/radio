@@ -55,18 +55,17 @@
   }
 }
 #pulse-circle {
-  width: 160px;
-  height: 160px;
-  margin: 30px auto;
+  width: 200px;
+  height: 200px;
   border-radius: 50%;
-  background: conic-gradient(from 0deg, red, orange, yellow, lime, cyan, blue, violet, red);
-  animation: spin 5s linear infinite;
-  box-shadow: 0 0 60px 20px rgba(255,255,255,0.1);
-  filter: blur(12px);
+  background: radial-gradient(circle, #ccff66, #111);
+  background-size: 400% 400%;
+  animation: waveMove 8s ease infinite;
   transition: transform 0.1s ease-out;
 }
 
-@keyframes spin {
-  from { transform: rotate(0deg); }
-  to   { transform: rotate(360deg); }
+@keyframes waveMove {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
 }
