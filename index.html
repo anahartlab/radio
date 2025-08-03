@@ -239,7 +239,18 @@ const tracks = [
   window.addEventListener("DOMContentLoaded", () => {
     const player = document.getElementById("player");
     player.addEventListener("ended", playRandom);
-    playRandom();
+
+    // Создаём AudioContext и делаем его доступным
+    window.audioCtx = new (window.AudioContext || window.webkitAudioContext)();
+
+    function startPlayback() {
+      window.audioCtx.resume().then(() => {
+        playRandom();
+      });
+      window.removeEventListener("click", startPlayback);
+    }
+
+    window.addEventListener("click", startPlayback, { once: true });
   });
 </script>
 </body>
