@@ -75,9 +75,18 @@
   width: 200px;
   height: 200px;
   margin: 30px auto;
-  background: radial-gradient(circle at center, #00ffff, #000);
-  filter: url(#fractalNoise);
   border-radius: 50%;
+  background: repeating-radial-gradient(circle, 
+    #00ffff, 
+    #004444 20%, 
+    #000000 40%);
+  background-size: 200% 200%;
+  animation: fractalFlow 8s ease-in-out infinite;
   transition: transform 0.1s ease-out;
-  box-shadow: 0 0 60px #00ffff44;
+  box-shadow: 0 0 40px #00ffff88;
+}
+@keyframes fractalFlow {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
 }
