@@ -141,8 +141,6 @@
     <button onclick="playRandom()" class="next-track-button">▶</button>
   </div>
 
-  <canvas id="visualizer" width="600" height="100" style="width: 90%; max-width: 600px; margin-top: 20px; border-radius: 8px; background-color: #111;"></canvas>
-
 </div>
   </div>
 </section>
@@ -200,41 +198,6 @@ const tracks = [
   }
 ];
 
-const canvas = document.getElementById('visualizer');
-const ctx = canvas.getContext('2d');
-
-const audioCtx = new (window.AudioContext || window.webkitAudioContext)();
-const audio = document.getElementById('player');
-const source = audioCtx.createMediaElementSource(audio);
-const analyser = audioCtx.createAnalyser();
-
-source.connect(analyser);
-analyser.connect(audioCtx.destination);
-
-analyser.fftSize = 64;
-const bufferLength = analyser.frequencyBinCount;
-const dataArray = new Uint8Array(bufferLength);
-
-function draw() {
-  requestAnimationFrame(draw);
-  analyser.getByteFrequencyData(dataArray);
-
-  ctx.clearRect(0, 0, canvas.width, canvas.height);
-  ctx.fillStyle = '#111';
-  ctx.fillRect(0, 0, canvas.width, canvas.height);
-
-  const barWidth = (canvas.width / bufferLength) * 2.5;
-  let x = 0;
-
-  for (let i = 0; i < bufferLength; i++) {
-    const barHeight = dataArray[i] * 1.5;
-    ctx.fillStyle = '#ccff66';
-    ctx.fillRect(x, canvas.height - barHeight, barWidth, barHeight);
-    x += barWidth + 2;
-  }
-}
-draw();
-
   let currentIndex = -1;
 
   function playRandom() {
@@ -265,7 +228,6 @@ draw();
   }
 
   window.addEventListener("DOMContentLoaded", () => {
-    audioCtx.resume();
     const player = document.getElementById("player");
     player.addEventListener("ended", playRandom);
     playRandom();
