@@ -74,8 +74,9 @@
 
 @media (max-width: 575px) {
   #pulse-fractal {
-    height: 28px;
-    border-radius: 14px;
+    height: 10px;
+    border-radius: 5px;
+    margin: 30px auto;
   }
   .next-track-button {
     font-size: 14px;
@@ -86,9 +87,9 @@
 #pulse-fractal {
   width: 90%;
   max-width: 400px; /* или сколько было */
-  height: 33px;      /* в 3 раза меньше, было ~100px */
+  height: 16px;      /* в 3 раза меньше, было ~100px */
   margin: 40px auto;
-  border-radius: 20px;
+  border-radius: 8px;
   background: linear-gradient(
     270deg,
     #ff0066,
