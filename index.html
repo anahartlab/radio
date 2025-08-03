@@ -199,6 +199,7 @@ const tracks = [
 ];
 
   let currentIndex = -1;
+  let lastPlayedIndex = -1;
 
   function playRandom() {
     let newIndex;
@@ -206,6 +207,7 @@ const tracks = [
       newIndex = Math.floor(Math.random() * tracks.length);
     } while (newIndex === currentIndex && tracks.length > 1);
     currentIndex = newIndex;
+    lastPlayedIndex = currentIndex;
 
     const audio = document.getElementById("player");
     const title = document.getElementById("track-title");
@@ -216,10 +218,12 @@ const tracks = [
   }
 
   function playPrev() {
-    if (tracks.length === 0) return;
-    currentIndex = (currentIndex - 1 + tracks.length) % tracks.length;
+    if (lastPlayedIndex === -1) return;
+    currentIndex = lastPlayedIndex;
+
     const audio = document.getElementById("player");
     const title = document.getElementById("track-title");
+
     audio.src = tracks[currentIndex].file;
     title.textContent = tracks[currentIndex].title;
     audio.play();
