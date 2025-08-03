@@ -124,6 +124,7 @@
     <h2 class="u-align-center u-text">ANAHART SOUND PROJECT</h2>
     <p class="u-align-center u-text">Сейчас играет:</p>
 <div style="text-align: center;">
+  
 
   <!-- Название трека -->
   <h4 id="track-title" style="
@@ -138,9 +139,9 @@
 
   <!-- Кнопка NEXT -->
   <div style="margin-top: 20px;">
-    <button onclick="playRandom()" class="next-track-button">▶</button>
+    <button onclick="playRandom()" class="next-track-button">▶▶</button>
   </div>
-
+<div id="pulse-circle"></div>
 </div>
   </div>
 </section>
@@ -157,6 +158,8 @@
 	C145.2,108.9,150,103.3,150,96.6z"></path></svg>
         </div>
       </div></footer>
+
+<script src="audio-visualizer.js"></script>
 
  <script>
 const tracks = [

@@ -54,3 +54,12 @@
     width: 340px;
   }
 }
+#pulse-circle {
+  width: 120px;
+  height: 120px;
+  margin: 30px auto 0;
+  border-radius: 50%;
+  background: radial-gradient(circle at center, #ccff66, #111);
+  box-shadow: 0 0 20px #ccff66cc;
+  transition: transform 0.1s ease-out;
+}
